@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+h2 {
+    text-align: center;
+    padding: 35px;
+}
+
+footer {
+    text-align: center;
+}
+
+.containerItemList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.IconCart {
+    width: 35px;
+    filter: invert(100%);
+}
