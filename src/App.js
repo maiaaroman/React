@@ -1,16 +1,17 @@
 import Footer from "./Componentes/Footer";
-import NavBar from "./Componentes/NavBar";
-import ItemListContainer from "./Componentes/ItemListContainer";
+import Main from "./Componentes/Main";
+import Header from "./Componentes/Header";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-  <>
 
-  <NavBar/>
-  <ItemListContainer titulo="Tienda online"/>
-  <Footer/>
-
-  </>
+    <BrowserRouter>
+      <Header/>
+      <Main/>
+      <Footer/>
+    </BrowserRouter>
+  
   )
 }
 
