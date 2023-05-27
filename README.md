@@ -23,4 +23,4 @@ Este proyecto es el final del curso de React Js en Coderhouse, este trata sobre 
 
 ## video demostrativo
 
-[![video]](/public/IMG_2706.MOV)
+[![video]](/public/video_2023-05-27_01-42-15.mp4)

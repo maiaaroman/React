@@ -2,10 +2,9 @@ import Page from "../Componentes/Page";
 import { useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useEffect, useState, useContext } from 'react';
-import CartContext from "../contexts/cartContext";
+
+import { useEffect, useState } from 'react';
 import arrow from "../img/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.png"
-import Contador from "../Componentes/Contador"
 
 
 
@@ -15,11 +14,6 @@ const DetailProduct = ({productoId}) => {
     const {id} = useParams()
 
     const [products, setProducts] = useState([]);
-    const { cart, setCart } = useContext(CartContext);
-
-    const handleAddToCart = (product) => {
-      setCart([...cart, product]);
-    };
 
   useEffect(() => {
     async function fetchPlatziAPI() {
@@ -58,8 +52,8 @@ const DetailProduct = ({productoId}) => {
             <Card.Text>
             {products?.description}
             </Card.Text>
-            <Button className='button' variant="outline-primary" onClick={() => handleAddToCart(products)}>Agregar</Button>
-            <Contador/>
+            <Button className='button' variant="outline-primary" onClick={() => {console.log("click")}}>Agregar</Button>
+            
           </Card.Body>
         </Card>
        
