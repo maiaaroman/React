@@ -7,7 +7,7 @@ const Contador = () => {
 
     return (
         <div>
-            <p>{cantidad} </p>
+            <p>{cantidad}</p>
             <Button className='button' variant="outline-primary" onClick={suma}>+</Button>
             <Button className='button' variant="outline-primary" onClick={resta}>-</Button>
         </div>

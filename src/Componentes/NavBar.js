@@ -12,9 +12,9 @@ const Navbar = () => {
             
         <nav className="header-nav">
             <Link to="/" className="header-link link">Catalogo</Link>
-            <Link to="/Category/1" className="header-link link">Clothes</Link>
-            <Link to="/Category/2" className="header-link link">Electronics</Link>
-            <Link to="/Category/3" className="header-link link">Furniture</Link>
+            <Link to="/Category/women's clothing" className="header-link link">Clothes Woman</Link>
+            <Link to="/Category/electronics" className="header-link link">Electronics</Link>
+            <Link to="/Category/jewelery" className="header-link link">Jewelery</Link>
             <Link to="/Carrito" className="header-link link"><CartWidget/></Link>
         </nav>
     </>

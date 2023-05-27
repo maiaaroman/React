@@ -2,30 +2,24 @@ import Page from "../Componentes/Page";
 import { useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useEffect, useState, useContext } from 'react';
-import CartContext from "../contexts/cartContext";
-import arrow from "../img/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.png"
 import Contador from "../Componentes/Contador"
+import { useEffect, useState } from 'react';
+import arrow from "../img/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.png"
 
 
 
 
-const DetailProduct = ({productoId}) => {
+const ItemDetailContainer = () => {
 
     const {id} = useParams()
 
     const [products, setProducts] = useState([]);
-    const { cart, setCart } = useContext(CartContext);
-
-    const handleAddToCart = (product) => {
-      setCart([...cart, product]);
-    };
 
   useEffect(() => {
     async function fetchPlatziAPI() {
       const idTitle = id
       try {
-        const response = await fetch(`https://fakestoreapi.com/products/${idTitle}`);
+        const response = await fetch(`https://api.escuelajs.co/api/v1/products/?title=${idTitle}`);
 
         if (response.ok) {
           const data = await response.json();
@@ -47,18 +41,22 @@ const DetailProduct = ({productoId}) => {
      
      <Card.Img onClick={() => window.history.back()} variant="top" style={{ width: "50px", height: "50px", marginRight: "10px", cursor: "pointer" }} src={arrow}/>
 
-     {products.title}
+     {id}
       <div className='containerItemList'>
      
         <Card  style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={products?.image}/>
+          <Card.Img variant="top" src={products[0]?.images?.[0]}/>
           <Card.Body>
-            <Card.Title>{products?.title}</Card.Title>
-            <Card.Text>${products?.price}</Card.Text>
+            <Card.Title>{products[0]?.title}</Card.Title>
+            <Card.Text>${products[0]?.price}</Card.Text>
             <Card.Text>
-            {products?.description}
+            {products[0]?.description}
             </Card.Text>
-            <Button className='button' variant="outline-primary" onClick={() => handleAddToCart(products)}>Agregar</Button>
+            <Card.Text>
+                Category:
+            {products[0]?.category?.name}
+            </Card.Text>
+            <Button className='button' variant="outline-primary" onClick={() => {console.log("click")}}>Agregar</Button>
             <Contador/>
           </Card.Body>
         </Card>
@@ -68,4 +66,4 @@ const DetailProduct = ({productoId}) => {
     </>
 }
 
-export default DetailProduct;
+export default ItemDetailContainer;

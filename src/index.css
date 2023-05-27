@@ -53,15 +53,52 @@ footer {
 }
 
 .misCompras {
-    text-align: center;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.itemsCompra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .header-nav a {
     color: rgb(184, 184, 184);
     text-decoration: none;
+}
 
+.header-titulo {
+    color: white;
 }
 
 .button {
     margin: 3px;
+}
+
+.compraFinal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.buttonCompra {
+    width: 100px;
+}
+
+.containerItemList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

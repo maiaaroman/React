@@ -1,5 +1,4 @@
 import ItemListContainer from "./ItemListContainer";
-
 import Carrito from "./Carrito";
 import { Route, Routes } from "react-router-dom";
 import Category from "../pages/Category";
@@ -13,7 +12,7 @@ const Main = () => {
             
             <Route path="/Category/:id" element={<Category/>}/>
             
-            <Route path="/Product/:id" element={<DetailProduct/>}/>
+            <Route path="/Item/:id" element={<DetailProduct/>}/>
 
             <Route path="/Carrito" element={<Carrito/>}/>
         </Routes>
