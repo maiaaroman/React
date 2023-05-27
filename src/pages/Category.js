@@ -21,9 +21,15 @@ const Category = () => {
     };
 
   useEffect(() => {
-    getProductosCategory()
-    .then((resultado) => {
-    setProducts(resultado)
+
+    const categoria = ["Electronics", "Clothes Woman", "Jewelery"]
+
+    getProductosCategory(categoria)
+    .then((productos) => {
+    setProducts(productos)
+  })
+  .catch((error) => {
+    console.log(error)
   })
   }, [id]);
 

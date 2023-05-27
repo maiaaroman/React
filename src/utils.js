@@ -39,15 +39,17 @@ export const getProductos = () => {
         })
 }
 
-export const getProductosCategory = () => {
+
+
+export const getProductosCategory = (categoria) => {
     const productosCollection = collection(db, "productos")
-    const fil = query(productosCollection,where("category","==","Jewelery"))
-    getDocs(fil)
+    const fil = query(productosCollection,where("category","in",categoria))
+    return getDocs(fil)
     .then((respuesta) => {
         const array = respuesta.docs
             const resultado = array.map((doc) => {
 
-                const id= doc.id
+                const id = doc.id
                 const data = doc.data()
                 data.id = id
 
@@ -60,6 +62,8 @@ export const getProductosCategory = () => {
         console.log("Hubo un error");
     })
 }
+
+
 
 export const crearVenta = (venta) => {
 

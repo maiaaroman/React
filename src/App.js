@@ -4,7 +4,6 @@ import Header from "./Componentes/Header";
 import { BrowserRouter } from "react-router-dom";
 import CartContext from "./contexts/cartContext";
 import { useState } from "react";
-import CustomProvider from "./Componentes/CustomProvider";
 
 function App() {
 
@@ -14,11 +13,9 @@ function App() {
   return (
     <CartContext.Provider value={{ cart, setCart, qnt, setQnt }}>
       <BrowserRouter>
-      <CustomProvider>
         <Header/>
         <Main/>
         <Footer/>
-      </CustomProvider>
       </BrowserRouter>
     </CartContext.Provider>
   )
