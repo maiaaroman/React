@@ -21,4 +21,6 @@ Este proyecto es el final del curso de React Js en Coderhouse, este trata sobre 
 - Ejecutar: `npm start`
 - Abrir el navegador: `http://localhost:3000`
 
-![imagen]()
+## video demostrativo
+
+[![video](/public/images/photo_2023-05-27_00-19-52.jpg)](/public/IMG_2706.MOV)
